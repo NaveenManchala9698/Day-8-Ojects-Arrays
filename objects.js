@@ -111,7 +111,7 @@ console.log(myData)
  Add to the previously created object a property with a boolean value to rappresent wheter you have or not a driving license.
 */
 
-/*
+
 let myData = {
     name: "Naveen",
     surname: "Manchala",
@@ -122,7 +122,7 @@ let myData = {
 }
 
 console.log(myData)
-*/
+
 
 
 /* EXERCISE 4
@@ -141,7 +141,7 @@ console.log(myData)
  Create a second object with another name, surname, email address and verify that this object has a different email address than the previous one.
 */
 
-/*
+
 let anotherData = {
     name: "Paul",
     surname: "Jones",
@@ -150,10 +150,13 @@ let anotherData = {
     country: "Italy",
     hasDrivingLicense: false
 }
-
 console.log(anotherData)
+console.log("Checking Equality:",
 
-*/
+myData.email !== anotherData.email
+)
+
+
 
 
 /* EXERCISE 6
@@ -163,19 +166,13 @@ console.log(anotherData)
 */
 
 
-let totalShoppingCart = {
-    items: "  ",
-    totalcartvalue50: true
+let totalShoppingCart = 40;
+
+if (totalShoppingCart <= 50) {
+    totalShoppingCart += 10;
 }
 console.log(totalShoppingCart)
 
-//Eligibility
-if (totalShoppingCart.totalcartvalue50 === true) {
-    console.log("Elogible for free Shipping!!")
-    console.log("Thank You!")
-} else {
-    console.log("Shipping cost: 10")
-}
 
 
 
@@ -184,39 +181,92 @@ if (totalShoppingCart.totalcartvalue50 === true) {
  Modify the previous answer inserting this information and, applying the same rules for the shipping cost, calculate the totalCost.
 */
 
-/* WRITE YOUR ANSWER HERE */
+let totalShoppingCart2 = 40;
+
+if (totalShoppingCart2 <= 50) {
+    totalShoppingCart2 += 10;
+}
+
+let discount = totalShoppingCart2*0.2;
+totalShoppingCart2 = totalShoppingCart2 - discount;
+console.log(totalShoppingCart2)
+
+
+
+
+
+
 
 /* EXERCISE 8
  Create a variable and assign to it an object representing a car, with properties like brand, model and licensePlate.
  Then clone it 5 times, and change the licensePlate for each cloned car without affecting the original one.
 */
 
-/* WRITE YOUR ANSWER HERE */
+let car
+let car1 = {
+    brand: "BMW",
+    model: "X6",
+    licensePlate: "capt3000"
+};
+
+let car2 = {}
+Object.assign(car2, car1)
+car2.licensePlate = "capt5000"
+
+let car3 = {}
+Object.assign(car3, car1)
+car3.licensePlate = "capt6000"
+
+let car4 = {}
+Object.assign(car4, car1)
+car4.licensePlate = "capt7000"
+
+let car5 = {}
+Object.assign(car5, car1)
+car5.licensePlate = "capt8000"
+
+let car6 = {}
+Object.assign(car6, car1)
+car2.licensePlate = "capt9000"
+
+console.log(car1, car2, car3, car4, car5, car6)
+
+
 
 /* EXERCISE 9
  Create a variable called carsForRent and assign to it an array containing all the cars from the previous exercise.
 */
 
-/* WRITE YOUR ANSWER HERE */
+let carsForRent = [car1, car2, car3, car4, car5, car6];
+console.log("carsForRent", carsForRent)
 
 /* EXERCISE 10
  Remove the first and the last car from the carsForRent array.
 */
 
-/* WRITE YOUR ANSWER HERE */
+
+delete carsForRent.car1
+delete carsForRent.car6
+
 
 /* EXERCISE 11
  Print to the console the type of the car variable you created before, as well as the types of its licensePlate and brand properties.
 */
 
-/* WRITE YOUR ANSWER HERE */
+/*
+console.log (typeof car, typeof car.licensePlate, car.brand);
+*/
 
 /* EXERCISE 12
  Create a new variable called carsForSale assigning to it an empty array, and then insert 3 cars into it.
  Create a new variable called totalCars and assign to it the total number of cars present in the carsForSale and carsForRent arrays.
 */
 
-/* WRITE YOUR ANSWER HERE */
+let carsForSale = [car1, car2, car3]
+let totalCars = {
+    carsForSale: carsForSale.length,
+    carsForRent: carsForRent.length
+}
 
 /* EXERCISE 13
  Using a loop, print to the console all the data for each car in the carsForSale array.
